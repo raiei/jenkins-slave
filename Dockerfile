@@ -2,7 +2,8 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
-RUN apt-get install -y openjdk-7-jdk
+RUN apt-get install -y default-jre
+RUN apt-get install -y default-jdk
 RUN apt-get install -y git
 RUN apt-get install -y maven
 ENV JENKINS_HOME /home/jenkins

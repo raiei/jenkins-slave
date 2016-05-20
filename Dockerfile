@@ -1,11 +1,7 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y openssh-server
+RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
-RUN apt-get install -y default-jre
-RUN apt-get install -y default-jdk
-RUN apt-get install -y git
-RUN apt-get install -y maven
+RUN apt-get update && apt-get install -y openjdk-7-jdk git maven
 ENV JENKINS_HOME /home/jenkins
 RUN useradd -d "$JENKINS_HOME" -u 1000 -m -s /bin/bash jenkins
 RUN echo "jenkins:Training!" | chpasswd
